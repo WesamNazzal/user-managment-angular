@@ -1,0 +1,289 @@
+<app-navbar></app-navbar>
+<app-toast></app-toast>
+<div class="form-container">
+  <h2 class="header">{{ isEdit ? "Edit User" : "Add User" }}</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          id="name"
+          pInputText
+          formControlName="name"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('name')?.invalid && userForm.get('name')?.touched
+          }"
+        />
+        <small
+          *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
+          class="error"
+        >
+          Name is required (Min 3 characters)
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          id="username"
+          pInputText
+          formControlName="username"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('username')?.invalid &&
+              userForm.get('username')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('username')?.invalid &&
+            userForm.get('username')?.touched
+          "
+          class="error"
+        >
+          Username is required (Min 3 characters)
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          id="email"
+          pInputText
+          formControlName="email"
+          type="email"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('email')?.invalid && userForm.get('email')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('email')?.invalid && userForm.get('email')?.touched
+          "
+          class="error"
+        >
+          Enter a valid email
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input
+          id="phone"
+          pInputText
+          formControlName="phone"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('phone')?.invalid && userForm.get('phone')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('phone')?.invalid && userForm.get('phone')?.touched
+          "
+          class="error"
+        >
+          Phone number is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="website">Website:</label>
+        <input
+          id="website"
+          pInputText
+          formControlName="website"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('website')?.invalid &&
+              userForm.get('website')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('website')?.invalid && userForm.get('website')?.touched
+          "
+          class="error"
+        >
+          Enter a valid website URL
+        </small>
+      </div>
+    </div>
+
+    <h3 class="section-title">Address</h3>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="street">Street:</label>
+        <input
+          id="street"
+          pInputText
+          formControlName="street"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('street')?.invalid && userForm.get('street')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('street')?.invalid && userForm.get('street')?.touched
+          "
+          class="error"
+        >
+          Street is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="suite">Suite:</label>
+        <input
+          id="suite"
+          pInputText
+          formControlName="suite"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('suite')?.invalid && userForm.get('suite')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('suite')?.invalid && userForm.get('suite')?.touched
+          "
+          class="error"
+        >
+          Suite is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <app-city-dropdown
+          formControlName="city"
+          [cities]="cities"
+        ></app-city-dropdown>
+
+        <small
+          *ngIf="userForm.get('city')?.invalid && userForm.get('city')?.touched"
+          class="error"
+        >
+          City is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode">Zip Code:</label>
+        <input
+          id="zipcode"
+          pInputText
+          formControlName="zipcode"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('zipcode')?.invalid &&
+              userForm.get('zipcode')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('zipcode')?.invalid && userForm.get('zipcode')?.touched
+          "
+          class="error"
+        >
+          Enter a valid Zip Code (5 digits)
+        </small>
+      </div>
+    </div>
+
+    <h3 class="section-title">Company</h3>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="companyName">Company Name:</label>
+        <input
+          id="companyName"
+          pInputText
+          formControlName="companyName"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('companyName')?.invalid &&
+              userForm.get('companyName')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('companyName')?.invalid &&
+            userForm.get('companyName')?.touched
+          "
+          class="error"
+        >
+          Company name is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="catchPhrase">Catch Phrase:</label>
+        <input
+          id="catchPhrase"
+          pInputText
+          formControlName="catchPhrase"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('catchPhrase')?.invalid &&
+              userForm.get('catchPhrase')?.touched
+          }"
+        />
+        <small
+          *ngIf="
+            userForm.get('catchPhrase')?.invalid &&
+            userForm.get('catchPhrase')?.touched
+          "
+          class="error"
+        >
+          Catch Phrase is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="business">Business:</label>
+        <input
+          id="business"
+          pInputText
+          formControlName="bs"
+          type="text"
+          class="input-field"
+          [ngClass]="{
+            'p-invalid':
+              userForm.get('bs')?.invalid && userForm.get('bs')?.touched
+          }"
+        />
+        <small
+          *ngIf="userForm.get('bs')?.invalid && userForm.get('bs')?.touched"
+          class="error"
+        >
+          Business is required
+        </small>
+      </div>
+    </div>
+
+    <button pButton type="submit" label="Save" class="primary-btn"></button>
+  </form>
+</div>

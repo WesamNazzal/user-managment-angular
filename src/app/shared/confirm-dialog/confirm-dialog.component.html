@@ -1,0 +1,36 @@
+<p-toast></p-toast>
+
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="false"
+  [dismissableMask]="false"
+>
+  <ng-template pTemplate="header">
+    <h3 class="dialog-title">Confirm Deletion</h3>
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <p class="dialog-message">Are you sure you want to delete this user?</p>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button
+        pButton
+        label="No"
+        icon="pi pi-times"
+        (click)="cancel()"
+        class="p-button-secondary"
+      ></button>
+
+      <button
+        pButton
+        label="Yes"
+        icon="pi pi-check"
+        (click)="confirm()"
+        class="p-button-danger"
+      ></button>
+    </div>
+  </ng-template>
+</p-dialog>

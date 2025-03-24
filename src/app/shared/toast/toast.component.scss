@@ -1,0 +1,27 @@
+::ng-deep .p-toast {
+    top: 90px !important; 
+    z-index: 1100;
+  
+    .p-toast-message {
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      &.p-toast-message-success {
+        border-left: 5px solid #28a745;
+      }
+  
+      &.p-toast-message-error {
+        border-left: 5px solid #dc3545;
+      }
+  
+      &.p-toast-message-info {
+        border-left: 5px solid #17a2b8;
+      }
+  
+      &.p-toast-message-warn {
+        border-left: 5px solid #ffc107;
+      }
+    }
+  }
+  

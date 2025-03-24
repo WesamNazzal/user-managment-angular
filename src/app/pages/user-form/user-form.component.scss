@@ -1,0 +1,74 @@
+.form-container {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e8e8e8;
+}
+
+.header {
+  text-align: center;
+  color: #002bad;
+  font-size: 24px;
+}
+
+.section-title {
+  margin-top: 20px;
+  color: #002bad;
+  font-size: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.input-field {
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+
+.primary-btn {
+  margin-top: 20px;
+  background-color: #002bad;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  height: 40px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.p-toast {
+  z-index: 9999 !important;
+}
+
+.p-toast-message {
+  font-size: 14px;
+}
+
+.p-toast .p-toast-message-success {
+  background-color: #28a745 !important;
+  color: white;
+}
