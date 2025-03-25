@@ -72,7 +72,7 @@ export class UserFormComponent implements OnInit {
         ),
       ]),
       street: new FormControl('', [Validators.required]),
-      suite: new FormControl('',[Validators.required]),
+      suite: new FormControl('', [Validators.required]),
       zipcode: new FormControl('', [
         Validators.required,
         Validators.pattern(/^\d{5}-\d{4}|\d{5}$/),
@@ -80,8 +80,7 @@ export class UserFormComponent implements OnInit {
       companyName: new FormControl('', [Validators.required]),
       catchPhrase: new FormControl('', [Validators.required]),
       bs: new FormControl('', [Validators.required]),
-      city: new FormControl('', [Validators.required])
-
+      city: new FormControl('', [Validators.required]),
     });
   }
 
@@ -110,6 +109,9 @@ export class UserFormComponent implements OnInit {
     this.cityControl.valueChanges.subscribe((city) => {
       this.userForm.patchValue({ city });
     });
+  }
+  cancel() {
+    this.router.navigate(['/users']);
   }
 
   saveUser() {

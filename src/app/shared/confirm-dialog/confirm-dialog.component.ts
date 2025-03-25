@@ -29,7 +29,7 @@ export class ConfirmDialogComponent {
 
     this.toastService.show(
       'success',
-      'User rggrgwgwege Deleted',
+      'User Deleted',
       'User has been deleted successfully!'
     );
   }

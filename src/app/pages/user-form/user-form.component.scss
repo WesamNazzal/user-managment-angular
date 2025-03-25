@@ -7,9 +7,12 @@
   border: 1px solid #e8e8e8;
 }
 
-.header {
-  text-align: center;
+
+.container3 {
+  width: 80%;
+  margin: auto;
   color: #002bad;
+  padding: 20px;
   font-size: 24px;
 }
 
@@ -28,32 +31,52 @@
 .form-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.5rem;
 }
 
 label {
   font-weight: bold;
   font-size: 16px;
+  margin-bottom: 6px;
 }
 
 .input-field {
   border-radius: 4px;
   font-size: 16px;
   padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   height: 40px;
 }
 
-.primary-btn {
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+app-city-dropdown {
+  margin-bottom: 15px;
+}
+
+::ng-deep .ng-invalid.ng-touched .p-dropdown {
+  border: 1px solid red !important;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px; /* Adds space between buttons */
   margin-top: 20px;
+}
+
+.primary-btn {
   background-color: #002bad;
   color: white;
-  border: none;
-  font-size: 16px;
-  border-radius: 6px;
-  height: 40px;
-  cursor: pointer;
-  width: 100%;
 }
+
+.cancel-btn {
+  background-color: #002bad;
+  color: white;
+}
+
 
 .error {
   color: red;

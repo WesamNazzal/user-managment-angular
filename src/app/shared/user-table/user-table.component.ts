@@ -8,6 +8,7 @@ import { User } from '../../services/user.service';
   selector: 'app-user-table',
   standalone: true,
   imports: [CommonModule, TableModule, ButtonModule],
+  styleUrls: ['./user-table.component.scss'],
   template: `
     <p-table
       [value]="users"
@@ -38,13 +39,13 @@ import { User } from '../../services/user.service';
             <button
               pButton
               icon="pi pi-pencil"
-              class="p-button-text"
+              class="icon-btn"
               (click)="edit.emit(user.id)"
             ></button>
             <button
               pButton
               icon="pi pi-trash"
-              class="p-button-text p-button-danger"
+              class="icon-btn danger"
               (click)="delete.emit(user.id)"
             ></button>
           </td>
