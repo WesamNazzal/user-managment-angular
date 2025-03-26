@@ -7,7 +7,6 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MenuModule, Menu } from 'primeng/menu';
 import { MenuItem, MessageService } from 'primeng/api';
-import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 import { ToastModule } from 'primeng/toast';
 import { ToastComponent } from '../../shared/toast/toast.componant';
@@ -23,7 +22,6 @@ import { ToastService } from '../../services/toast.service';
     ButtonModule,
     ProgressSpinnerModule,
     MenuModule,
-    NavbarComponent,
     ConfirmDialogComponent,
     ToastModule,
     ToastComponent,
@@ -92,13 +90,6 @@ export class UserListComponent implements OnInit, AfterViewInit {
     if (this.selectedUserId !== null) {
       this.users = this.users.filter((user) => user.id !== this.selectedUserId);
       this.selectedUserId = null;
-
-      // this.toastservice.show(
-      //   'success',
-      //   'User wggeehhhweg',
-      //   'The user was wrhrtjeyeeteytjywjyrjwrhrjyjrhtwj5 successfully.',
-      //   'global'
-      // );
     }
   }
 

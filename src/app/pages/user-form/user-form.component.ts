@@ -8,8 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { CityDropdownComponent } from '../../shared/city-dropdown/city-dropdown.component';
-import { NavbarComponent } from '../../shared/navbar/navbar.component';
-import { ToastComponent } from '../../shared/toast/toast.componant';
+ import { ToastComponent } from '../../shared/toast/toast.componant';
 import { ToastService } from '../../services/toast.service';
 
 @Component({
@@ -23,7 +22,6 @@ import { ToastService } from '../../services/toast.service';
     ToastModule,
     ToastComponent,
     CityDropdownComponent,
-    NavbarComponent,
   ],
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss'],

@@ -18,7 +18,6 @@ export class NavbarComponent {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-home',
         command: () => this.router.navigate(['/']),
       },
       {
